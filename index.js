@@ -2,7 +2,7 @@ let word = document.getElementById('word')
 let letter = document.getElementById('letter')
 let guessBtn = document.getElementById('guessBtn')
 let lives = document.getElementById('lives')
-
+let wonLose = document.getElementById('wonLose')
 
 
 
@@ -43,4 +43,18 @@ function checkLetter() {
         lives.innerText =`Lives Left : ${livesCounter}`
     }
 
+    gameChecker()
+}
+
+function gameChecker() {
+    if (livesCounter === 0) {
+        guessBtn.removeEventListener('click', checkLetter)
+        wonLose.innerText = 'Lose'
+        wonLose.style.color = 'red'
+    }
+    if(!String(answerArray).includes('_')) {
+        guessBtn.removeEventListener('click', checkLetter)
+        wonLose.innerText = 'Win'
+        wonLose.style.color = 'green'
+    }
 }
