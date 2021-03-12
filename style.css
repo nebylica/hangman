@@ -27,3 +27,8 @@
     background-color: #b8b8b8;
     cursor: pointer;
 }
+#word {
+    font-size: 40px;
+    margin: 20px;
+    letter-spacing: 5px;
+}
